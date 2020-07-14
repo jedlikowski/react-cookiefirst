@@ -2,6 +2,14 @@
   "name": "react-cookiefirst",
   "version": "0.1.1",
   "description": "React helper component for CookieFirst cookie banner",
+  "keywords": [
+    "react",
+    "react-hook",
+    "cookiefirst",
+    "cookie",
+    "first",
+    "banner"
+  ],
   "main": "build/index.js",
   "module": "build/index.es.js",
   "jsnext:main": "build/index.es.js",

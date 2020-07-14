@@ -70,7 +70,7 @@ When using the `useCookieFirst` context hook, the returned value is an object wi
 | `declineCategory`             |             async function             | Takes as an argument name of a cookie category and saves consent with this category rejected |
 | `withdrawConsent`             |             async function             | Withdraws previous consent. Can be used only after consent is given.                         |
 
-All of the consent-changing functions will trigger a page reload if there was a previously saved consent. This is done because on initialization CookieFirst banner checks accepted categories and loads respective scripts. There is no way to "unload" a script once it's loaded.
+⚠️ All of the consent-changing functions will trigger a page reload if there was a previously saved consent. This is done because on initialization CookieFirst banner checks accepted categories and loads respective scripts. There is no way to "unload" a script once it's loaded.
 
 ## The consent object
 
