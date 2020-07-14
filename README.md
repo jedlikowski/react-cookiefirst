@@ -55,30 +55,20 @@ const SomeContextConsumer = () => {
 
 ## Context
 
-consent: null | Consent;
-openPanel: () => void;
-closePanel: () => void;
-updateConsent: () => Promise<any>;
-acceptCategory: () => Promise<any>;
-acceptAllCategories: () => Promise<any>;
-acceptPreselectedCategories: () => Promise<any>;
-declineAllCategories: () => Promise<any>;
-declineCategory: () => Promise<any>;
-withdrawConsent: () => Promise<any>;
 When using the `useCookieFirst` context hook, the returned value is an object with the following properties:
 
-| Name                          |          Type          | Description                                                                                  |
-| ----------------------------- | :--------------------: | -------------------------------------------------------------------------------------------- |
-| `consent`                     | null or Consent object | Current user's consent. Will be `null` before user consents for the first time.              |
-| `openPanel`                   |        function        | opens the settings panel / modal. Unavailable in stealth mode                                |
-| `closePanel`                  |        function        | closes the settings panel / modal. Unavailable in stealth mode                               |
-| `updateConsent`               |     async function     | Takes as an argument the new Consent object and saves it                                     |
-| `acceptCategory`              |     async function     | Takes as an argument name of a cookie category and saves consent with this category accepted |
-| `acceptAllCategories`         |     async function     | Saves consent with all categories accepted                                                   |
-| `acceptPreselectedCategories` |     async function     | Saves consent with only preselected categories from the cookiefirst admin panel              |
-| `declineAllCategories`        |     async function     | Saves consent with all categories rejected                                                   |
-| `declineCategory`             |     async function     | Takes as an argument name of a cookie category and saves consent with this category rejected |
-| `withdrawConsent`             |     async function     | Withdraws previous consent. Can be used only after consent is given.                         |
+| Name                          |                  Type                  | Description                                                                                  |
+| ----------------------------- | :------------------------------------: | -------------------------------------------------------------------------------------------- |
+| `consent`                     | null or [Consent](#the-consent-object) | Current user's consent. Will be `null` before user consents for the first time.              |
+| `openPanel`                   |                function                | opens the settings panel / modal. Unavailable in stealth mode                                |
+| `closePanel`                  |                function                | closes the settings panel / modal. Unavailable in stealth mode                               |
+| `updateConsent`               |             async function             | Takes as an argument the new [Consent](#the-consent-object) and saves it                     |
+| `acceptCategory`              |             async function             | Takes as an argument name of a cookie category and saves consent with this category accepted |
+| `acceptAllCategories`         |             async function             | Saves consent with all categories accepted                                                   |
+| `acceptPreselectedCategories` |             async function             | Saves consent with only preselected categories from the cookiefirst admin panel              |
+| `declineAllCategories`        |             async function             | Saves consent with all categories rejected                                                   |
+| `declineCategory`             |             async function             | Takes as an argument name of a cookie category and saves consent with this category rejected |
+| `withdrawConsent`             |             async function             | Withdraws previous consent. Can be used only after consent is given.                         |
 
 All of the consent-changing functions will trigger a page reload if there was a previously saved consent. This is done because on initialization CookieFirst banner checks accepted categories and loads respective scripts. There is no way to "unload" a script once it's loaded.
 
