@@ -10,6 +10,7 @@
     "first",
     "banner"
   ],
+  "type": "module",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "jsnext:main": "build/index.es.js",
