@@ -30,6 +30,7 @@ export type ReactCookieFirstProps = {
   silent?: boolean;
   stealth?: boolean;
   lang?: string;
+  children?: React.ReactNode;
   renderBeforeReady?: boolean;
 };
 
