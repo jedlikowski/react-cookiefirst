@@ -31,6 +31,7 @@ export type ReactCookieFirstProps = {
   stealth?: boolean;
   lang?: string;
   renderBeforeReady?: boolean;
+  children?: React.ReactElement | string | number | React.ReactFragment | React.ReactPortal;
 };
 
 export const useCookieFirst = () => React.useContext(ReactCookieFirstContext);
